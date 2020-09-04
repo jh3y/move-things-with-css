@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: hsl(170, 90%, 95%);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.wave {
+  font-size: 4rem;
+  margin: 1rem;
+  animation: wave 1s;
+}
+
+@keyframes wave {
+  50% {
+    transform: translate(0, -50%);
+  }
+}

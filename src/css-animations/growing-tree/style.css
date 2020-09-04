@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background: #4e5c5f;
+}
+
+@-webkit-keyframes grow {
+  from {
+    -webkit-transform: scale(0.25);
+    transform: scale(0.25);
+  }
+  to {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+}
+@keyframes grow {
+  from {
+    -webkit-transform: scale(0.25);
+    transform: scale(0.25);
+  }
+  to {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+}
+@-webkit-keyframes fly {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) rotate(-135deg);
+    transform: translate(-50%, -50%) rotate(-135deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+@keyframes fly {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) rotate(-135deg);
+    transform: translate(-50%, -50%) rotate(-135deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+.tree {
+  height: 25vmin;
+  -webkit-animation-name: grow;
+  animation-name: grow;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-timing-function: steps(5);
+  animation-timing-function: steps(5);
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.rain {
+  -webkit-transform-origin: 50% 250%;
+  transform-origin: 50% 250%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-size: 5vmin;
+  -webkit-animation-name: fly;
+  animation-name: fly;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-iteration-count: 2;
+  animation-iteration-count: 2;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}

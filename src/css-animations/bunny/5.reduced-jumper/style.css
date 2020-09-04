@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #e0f5d6;
+  font-family: sans-serif;
+}
+label {
+  font-weight: bold;
+}
+.bunny {
+  height: 50px;
+  width: 50px;
+  background-image: url('https://assets.codepen.io/605876/bunny-ready.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: jump 0.9s infinite;
+  animation: jump 0.9s infinite;
+  margin-bottom: 2rem;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: translate(0, 0) scaleX(1) scaleY(1);
+  transform: translate(0, 0) scaleX(1) scaleY(1);
+}
+
+@-webkit-keyframes jump {
+  10%,
+  90% {
+    -webkit-transform: translate(0, 0) scaleX(1.1) scaleY(0.8);
+    transform: translate(0, 0) scaleX(1.1) scaleY(0.8);
+  }
+  50% {
+    background-image: url('https://assets.codepen.io/605876/bunny-jump.png');
+    -webkit-transform: translate(0, -60px) scaleX(0.9) scaleY(1.2);
+    transform: translate(0, -60px) scaleX(0.9) scaleY(1.2);
+  }
+}
+@keyframes jump {
+  10%,
+  90% {
+    -webkit-transform: translate(0, 0) scaleX(1.1) scaleY(0.8);
+    transform: translate(0, 0) scaleX(1.1) scaleY(0.8);
+  }
+  50% {
+    background-image: url('https://assets.codepen.io/605876/bunny-jump.png');
+    -webkit-transform: translate(0, -60px) scaleX(0.9) scaleY(1.2);
+    transform: translate(0, -60px) scaleX(0.9) scaleY(1.2);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .bunny {
+    animation-name: none;
+  }
+}

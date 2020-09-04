@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  background: #a3d65c;
+}
+span {
+  font-size: 2rem;
+}
+.racetrack {
+  position: relative;
+  width: 24vmin;
+  height: 7vmin;
+  -webkit-transform: translate(-8vmin, 0);
+          transform: translate(-8vmin, 0);
+}
+.racetrack:before {
+  box-sizing: border-box;
+  content: '';
+  height: 40vmin;
+  width: 40vmin;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%) scale(1.05);
+          transform: translate(0, -50%) scale(1.05);
+  border-radius: 50%;
+  border: 5vmin solid #666;
+}
+.racecar {
+  user-select: none;
+  -webkit-transform-origin: 500% 50%;
+          transform-origin: 500% 50%;
+  height: 7vmin;
+  width: 4vmin;
+  -webkit-animation-name: lap;
+          animation-name: lap;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+@-webkit-keyframes lap {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes lap {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+:checked ~ .racetrack .racecar {
+  animation-play-state: paused;
+}

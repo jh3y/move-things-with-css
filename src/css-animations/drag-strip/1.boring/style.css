@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background: #ad9c85;
+}
+.car {
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -20px;
+}
+.car--red {
+  margin-top: -36px;
+}
+.car--green {
+  margin-top: 4px;
+}
+.car img {
+  width: 100%;
+}
+.strip {
+  width: 80vw;
+  height: 80px;
+  background: repeating-linear-gradient(
+        90deg,
+        #fff 0 20px,
+        transparent 20px 25px
+      )
+      no-repeat 0 50%/100% 4px,
+    #bfbfbf;
+  position: relative;
+}
+.car {
+  -webkit-animation: race 4s;
+  animation: race 4s;
+  -webkit-transform: translate(calc(-40vw + 25px), 0);
+  transform: translate(calc(-40vw + 25px), 0);
+}
+@-webkit-keyframes race {
+  to {
+    -webkit-transform: translate(calc(40vw - 25px), 0);
+    transform: translate(calc(40vw - 25px), 0);
+  }
+}
+@keyframes race {
+  to {
+    -webkit-transform: translate(calc(40vw - 25px), 0);
+    transform: translate(calc(40vw - 25px), 0);
+  }
+}

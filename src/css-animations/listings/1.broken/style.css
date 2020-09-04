@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background: #e7f7de;
+}
+.contacts {
+  background: #fff;
+  width: 320px;
+  border-radius: 6px;
+  height: 480px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px -5px #4d4d4d;
+}
+.contact {
+  height: 84px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.contact + .contact {
+  margin-top: 10px;
+}
+.contact__content {
+  border-radius: 6px;
+  background: #d1f0c2;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+.contact__line {
+  background: #fff;
+  border-radius: 2px;
+  -webkit-box-flex: 1;
+  flex: 1;
+}
+.contact__line + .contact__line {
+  margin-top: 6px;
+}
+.contact__line:nth-of-type(1) {
+  background: #a9e28d;
+  width: 80%;
+}
+.contact__line:nth-of-type(2) {
+  width: 80%;
+}
+.contact__line:nth-of-type(4) {
+  width: 70%;
+}
+
+.contact {
+  animation: fade 0.25s;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+.contact:nth-of-type(1) {
+  --index: 0;
+}
+.contact:nth-of-type(2) {
+  --index: 1;
+}
+.contact:nth-of-type(3) {
+  --index: 2;
+}
+.contact:nth-of-type(4) {
+  --index: 3;
+}
+.contact:nth-of-type(5) {
+  --index: 4;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}

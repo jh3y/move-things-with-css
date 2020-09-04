@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background: hsl(10, 70%, 40%);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.medal {
+  height: 100px;
+  -webkit-transform: scale(var(--scale, 1));
+  transform: scale(var(--scale, 1));
+  -webkit-animation: scale 1s infinite alternate;
+  animation: scale 1s infinite alternate;
+}
+@-webkit-keyframes scale {
+  to {
+    --scale: 2;
+  }
+}
+@keyframes scale {
+  to {
+    --scale: 2;
+  }
+}

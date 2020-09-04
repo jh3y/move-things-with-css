@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background: hsl(280, 70%, 20%);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+.medal {
+  height: 100px;
+  margin: 0 1rem;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-animation: scale 0.5s forwards;
+  animation: scale 0.5s forwards;
+}
+@-webkit-keyframes scale {
+  to {
+    -webkit-transform: scale(var(--scale));
+    transform: scale(var(--scale));
+  }
+}
+@keyframes scale {
+  to {
+    -webkit-transform: scale(var(--scale));
+    transform: scale(var(--scale));
+  }
+}
+
+.medal--bronze {
+  --scale: 1.25;
+}
+.medal--silver {
+  --scale: 1.5;
+}
+.medal--gold {
+  --scale: 1.75;
+}

@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --pull-up: 1;
+  --wait: 1;
+  --pull-off: 0.6;
+}
+
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+      90deg,
+      #b88f14 calc(50% - 40px),
+      transparent calc(50% - 40px) calc(50% + 40px),
+      #b88f14 calc(50% + 40px)
+    ),
+    linear-gradient(
+      transparent calc(50% - 60px),
+      #e6e6e6 calc(50% - 60px) calc(50% - 50px),
+      transparent calc(50% - 50px)
+    ),
+    #404040;
+}
+.car {
+  width: 50px;
+  -webkit-animation: pull-up calc(var(--pull-up) * 1s),
+    pull-off calc(var(--pull-off) * 1s)
+      calc((var(--pull-up) + var(--wait)) * 1s);
+  animation: pull-up calc(var(--pull-up) * 1s),
+    pull-off calc(var(--pull-off) * 1s)
+      calc((var(--pull-up) + var(--wait)) * 1s);
+}
+@-webkit-keyframes pull-up {
+  from {
+    -webkit-transform: translate(0, 50vh);
+    transform: translate(0, 50vh);
+  }
+}
+@keyframes pull-up {
+  from {
+    -webkit-transform: translate(0, 50vh);
+    transform: translate(0, 50vh);
+  }
+}
+@-webkit-keyframes pull-off {
+  to {
+    -webkit-transform: translate(0, -100vh);
+    transform: translate(0, -100vh);
+  }
+}
+@keyframes pull-off {
+  to {
+    -webkit-transform: translate(0, -100vh);
+    transform: translate(0, -100vh);
+  }
+}

@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #8c8c8c;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  padding: 2rem;
+}
+.car {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+.car__image {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.car__label {
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.car + .car {
+  margin-top: 2rem;
+}
+.car {
+  -webkit-animation-name: move;
+          animation-name: move;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.car:nth-of-type(1) {
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+.car:nth-of-type(2) {
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+.car:nth-of-type(3) {
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+.car:nth-of-type(4) {
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+.car:nth-of-type(5) {
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+.car:nth-of-type(6) {
+  -webkit-animation-timing-function: steps(10);
+          animation-timing-function: steps(10);
+}
+.car:nth-of-type(7) {
+  -webkit-animation-timing-function: cubic-bezier(0.15, 0.5, 1, 0);
+          animation-timing-function: cubic-bezier(0.15, 0.5, 1, 0);
+}
+@-webkit-keyframes move {
+  0%, 10% {
+    -webkit-transform: translateX(-40vw);
+            transform: translateX(-40vw);
+  }
+  90%, 100% {
+    -webkit-transform: translateX(40vw);
+            transform: translateX(40vw);
+  }
+}
+@keyframes move {
+  0%, 10% {
+    -webkit-transform: translateX(-40vw);
+            transform: translateX(-40vw);
+  }
+  90%, 100% {
+    -webkit-transform: translateX(40vw);
+            transform: translateX(40vw);
+  }
+}

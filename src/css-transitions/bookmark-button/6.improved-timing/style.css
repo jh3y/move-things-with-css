@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: -webkit-box;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+.bookmark-button {
+  outline: transparent;
+  display: -webkit-box;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 6px;
+  background-color: hsl(280, 50%, 15%);
+  color: hsl(0, 0%, 100%);
+  font-family: sans-serif;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px -2px hsl(0, 0%, 5%);
+}
+
+.bookmark-button:hover {
+  background-color: hsl(280, 50%, 0%);
+}
+
+.bookmark-button:active {
+  box-shadow: 0 0 0 0 hsl(0, 0%, 0%);
+}
+
+.bookmark-button svg {
+  height: 28px;
+  width: 28px;
+  fill: transparent;
+  stroke: hsl(0, 0%, 100%);
+  stroke-width: 2px;
+  margin-right: 8px;
+  -webkit-transform: translate(0, -5%);
+          transform: translate(0, -5%);
+}
+
+/* Active state */
+.bookmark-button--active path {
+  fill: hsl(45, 95%, 60%);
+  stroke: hsl(45, 95%, 60%);
+}
+
+.bookmark-button {
+  transition-duration: 0.2s;
+  transition-property: background-color, box-shadow;
+}
+
+.bookmark-button__star {
+  transform-origin: 50% 50%;
+  transition-property: fill, transform, -webkit-transform;
+  transition-duration: 0.2s, 0.6s, 0.6s;
+  transition-timing-function: ease, cubic-bezier(.5,-1.5,.6,2.5), cubic-bezier(.5,-1.5,.6,2.5);
+}
+
+.bookmark-button--active .bookmark-button__star {
+  transform: rotate(216deg);
+}

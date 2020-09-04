@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-image: url('https://assets.codepen.io/605876/flying-backdrop.png');
+  background-color: #a3f5f5;
+  background-size: cover;
+  background-position-x: 0;
+  background-position-y: center;
+  -webkit-animation: backdrop 2s infinite linear;
+  animation: backdrop 2s infinite linear;
+}
+.plane {
+  height: 50px;
+  -webkit-animation: fly-in 1s 1s backwards, advance 4s 2s infinite;
+  animation: fly-in 1s 1s backwards, advance 4s 2s infinite;
+}
+@-webkit-keyframes backdrop {
+  to {
+    background-position-x: -100vw;
+  }
+}
+@keyframes backdrop {
+  to {
+    background-position-x: -100vw;
+  }
+}
+@-webkit-keyframes fly-in {
+  from {
+    -webkit-transform: translate(-250%, 250%) scale(0);
+    transform: translate(-250%, 250%) scale(0);
+  }
+}
+@keyframes fly-in {
+  from {
+    -webkit-transform: translate(-250%, 250%) scale(0);
+    transform: translate(-250%, 250%) scale(0);
+  }
+}
+@-webkit-keyframes advance {
+  50% {
+    -webkit-transform: translate(50%, 50%) rotate(-10deg);
+    transform: translate(50%, 50%) rotate(-10deg);
+  }
+}
+@keyframes advance {
+  50% {
+    -webkit-transform: translate(50%, 50%) rotate(-10deg);
+    transform: translate(50%, 50%) rotate(-10deg);
+  }
+}
